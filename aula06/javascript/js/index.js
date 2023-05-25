@@ -1,197 +1,211 @@
 /*
-    A função a baixo é chamanda por um evento que está na página index.html.
-    O evennto foi adiciona a um botão com o comando onclick, ou seja, quando 
-    o usuário clicar no botão será chamanda a função mensagem  
+A função abaixo é chamada por um evento que está
+na página index.html. O evento foi adicionado a um
+botão com o comando onclick, ou seja, quando o
+usuário clicar no botão será chamada a função
+mensagem.
+*/
+
+let valor1 = 0;
+let valor2 = 0;
+let resultado = 0;
+let operador = "";
+
+
+function mensagem(){
+    var nome = prompt("Digite o seu nome");
+    document.getElementsByTagName("p")[0].innerHTML=nome;
+}
+
+
+const body = document.body;
+body.onload = apagarDisplay;
+
+const display = document.getElementsByTagName("input")[0];
+
+
+
+
+/**
+ * Quando a página for carregada ela irá chamar
+ * a função apagarDisplay, pois a função apaga a
+ * tela e adiciona o valor 0(zero).
+ * O evento utilizado será onload(ao carregar a página)
+ * aplicado no body(document.body)
  */
-    function mensagem(){
-        var nome = prompt("Digite seu nome:");
-        document.getElementsByTagName("p")[0].innerHTML=nome;
+
+function apagarDisplay(){
+   display.value="0";
+
+}
+
+function adicionar0(){
+    if(display.value=="0"){
+        display.value="0";
+    }
+    else{
+        display.value+="0";
+    }
+}
+
+function adicionar1(){
+    if(display.value=="0"){
+        display.value="1";
+    }
+    else{
+        display.value+="1";
+    }
+}
+
+function adicionar2(){
+    if(display.value=="0"){
+        display.value="2";
+    }
+    else{
+        display.value+="2";
+    }
+}
+
+function adicionar3(){
+    if(display.value=="0"){
+        display.value="3";
+    }
+    else{
+        display.value+="3";
+    }
+}
+
+function adicionar4(){
+    if(display.value=="0"){
+        display.value="4";
+    }
+    else{
+        display.value+="4";
+    }
+}
+
+function adicionar5(){
+    if(display.value=="0"){
+        display.value="5";
+    }
+    else{
+        display.value+="5";
+    }
+}
+
+function adicionar6(){
+    if(display.value=="0"){
+        display.value="6";
+    }
+    else{
+        display.value+="6";
+    }
+}
+
+function adicionar7(){
+    if(display.value=="0"){
+        display.value="7";
+    }
+    else{
+        display.value+="7";
+    }
+}
+
+function adicionar8(){
+    if(display.value=="0"){
+        display.value="8";
+    }
+    else{
+        display.value+="8";
+    }
+}
+
+function adicionar9(){
+    if(display.value=="0"){
+        display.value="9";
+    }
+    else{
+        display.value+="9";
+    }
+}
+
+function adicionarPonto(){
+
+    /**
+     * Para o botão estamos verificando se o ponto
+     * já foi adicionado caso isso já tenha acontecido,
+     * o ponto não será mais acrescido. Mas se o ponto
+     * não foi adicionado, então será acrescentado ao
+     * display. Para verificar a exiscentecia do ponto
+     * no display. Quando o indexOf retorna -1 é porque não
+     * foi localizado e, assim nós adicionamos o ponto.
+     */
+
+    if(display.value.indexOf(".")==-1){
+        display.value+="."
+    }
+}
+
+function soma(){
+    valor1 = parseFloat(display.value);
+    operador = "+";
+    apagarDisplay();
+}
+
+function sub(){
+    valor1 = parseFloat(display.value);
+    operador = "-";
+    apagarDisplay();
+}
+
+function mult(){
+    valor1 = parseFloat(display.value);
+    operador = "*";
+    apagarDisplay();
+}
+
+function divi(){
+    valor1 = parseFloat(display.value);
+    operador = "/";
+    apagarDisplay();
+}
+
+function porc(){
+    valor1 = parseFloat(display.value)
+    operador = "%"
+    apagarDisplay()
+}
+
+function raiz(){
+    valor1 = parseFloat(display.value)
+    resultado = Math.sqrt(valor1);
+    display.value = resultado;
+}
+
+function igual(){
+    if(operador == "+"){
+        resultado = valor1 + parseFloat(display.value);
+        display.value = resultado;
+        
+    }
+    else if(operador == "-"){
+        resultado = valor1 - parseFloat(display.value);
+        display.value = resultado;
+    }
+    else if(operador == "*"){
+        resultado = valor1 * parseFloat(display.value);
+        display.value = resultado;
+    }
+    else if(operador == "/"){
+        resultado = valor1 / parseFloat(display.value);
+        display.value = resultado;
+    }
+    else if(operador == "%"){
+        parseFloat(display.value) / 100
+        resultado = valor1 * (display.value)
+        display.value = resultado;
+        parseFloat(display.value);
+        
     }
     
-    /*
-    Quando a página for carregada, ela irá chamar a função
-    apagarDisplay, pois a função apaga a tela e a adicionar o valor 0(zero)
-    
-    O evento utilizando será onload(quando carregar a página) aplicado no body(document.body)
-    */
-    
-    const body = document.body;
-    body.onload = apagarDisplay;    
-    
-    
-    const diplay = document.getElementsByTagName("input")[0];
-    let valor1 = 0, resultado = 0, operador = "";
-    
-    function apagarDisplay(){
-        diplay.value="0";
-    }
-    
-    function adiciona1(){
-        if(diplay.value=="0"){
-            diplay.value="1";
-        }
-        else{
-            diplay.value+="1";
-        }
-    }
-    
-    function adiciona2(){
-        if(diplay.value=="0"){
-            diplay.value="2";
-        }
-        else{
-            diplay.value+="2";
-        }
-    }
-    
-    function adiciona3(){
-        if(diplay.value=="0"){
-            diplay.value="3";
-        }
-        else{
-            diplay.value+="3";
-        }
-    }
-    
-    function adiciona4(){
-        if(diplay.value=="0"){
-            diplay.value="4";
-        }
-        else{
-            diplay.value+="4";
-        }
-    }
-    
-    function adiciona5(){
-        if(diplay.value=="0"){
-            diplay.value="5";
-        }
-        else{
-            diplay.value+="5";
-        }
-    }
-    
-    function adiciona6(){
-        if(diplay.value=="0"){
-            diplay.value="6";
-        }
-        else{
-            diplay.value+="6";
-        }
-    }
-    
-    function adiciona7(){
-        if(diplay.value=="0"){
-            diplay.value="7";
-        }
-        else{
-            diplay.value+="7";
-        }
-    }
-    
-    function adiciona8(){
-        if(diplay.value=="0"){
-            diplay.value="8";
-        }
-        else{
-            diplay.value+="8";
-        }
-    }
-    
-    function adiciona9(){
-        if(diplay.value=="0"){
-            diplay.value="9";
-        }
-        else{
-            diplay.value+="9";
-        }
-    }
-    
-    function adiciona0(){
-        if(diplay.value=="0"){
-            diplay.value="0";
-        }
-        else{
-            diplay.value+="0";
-        }
-    }
-    
-    function adicionaPonto(){
-        /*
-        Para o botão ponto estamos verificando se o ponto já foi adicionado.
-        Caso isto tenha acontecindo, o ponto não será mais acrescido. Mas 
-        se o ponto não foi adicionado, então será acrescentado o display.
-        Para verificar a existência do ponto utilizamos o comando indexOf, que
-        tenta localizar o ponto no display. Quando o indexOF retorna -1 é porque
-        não foi localizado e,assim nós adicionamos o ponto.
-        */
-        if(diplay.value.indexOf(".")==-1){
-            diplay.value+=".";
-        }
-    }
-    
-    function adicionaVirgula(){
-        if(diplay.value.indexOf(",")==-1){
-            diplay.value+=",";
-        }
-    }
-    
-    function soma(){
-        valor1 = parseFloat(diplay.value);
-        operador = "+";
-        apagarDisplay();
-    }
-    
-    function subtrair(){
-        valor1 = parseFloat(diplay.value);
-        operador = "-";
-        apagarDisplay();
-    }
-    
-    function mutiplicacao(){
-        valor1 = parseFloat(diplay.value);
-        operador = "x";
-        apagarDisplay();
-    }
-    
-    function dividir(){
-        valor1 = parseFloat(diplay.value);
-        operador = "÷";
-        apagarDisplay();
-    }
-    
-    function raiz(){
-        valor1 = parseFloat(diplay.value);
-        operador = "√";
-        resultado = Math.sqrt(diplay.value);
-        diplay.value = resultado;
-    }
-    
-    function porcentagem(){
-        valor1 = parseFloat(diplay.value);
-        operador = "%";
-        resultado = (valor1*parseFloat(diplay.value)/100);          
-        diplay.value = resultado;
-    }
-    
-    function igual(){
-        if(operador=="+"){
-            resultado = valor1+parseFloat(diplay.value);
-            diplay.value = resultado;
-        }
-        else if(operador=="-"){
-            resultado = valor1+-parseFloat(diplay.value);
-            diplay.value = resultado;
-        }
-        else if(operador=="x"){
-            resultado = valor1*parseFloat(diplay.value);
-            diplay.value = resultado;
-        }
-        else if(operador=="÷"){
-            resultado = valor1/parseFloat(diplay.value);
-            diplay.value = resultado;
-        }
-        else{
-            console.log("Error");
-        }
-    }
+}

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@600&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -10,16 +11,19 @@ form{
     width: 30%;
     margin: 10% auto;
     border: 1px solid silver;
-    border-radius: 10px;
+    border-radius: 21px;
 }
 input[type=text]{
     width: 100%;
     padding: 15px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    font-size: 20pt;
+    border: 1px solid silver;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: rgb(151, 151, 151);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 30pt;
+    color: rgb(34, 34, 34);
     text-align: right;
-    outline-color: dodgerblue;
 }
 button{
     width: 25%;
@@ -29,12 +33,12 @@ button{
     color: white;
     cursor: pointer;
 }
-form #btnIgual{
-    width: 50%;
-    border-bottom-left-radius: 10px;
+form #btn0{
+    border-bottom-left-radius: 20px;
 }
-form #btnRaiz{
-    border-bottom-right-radius: 10px;
+form #btnigual{
+    width: 50%;
+    border-bottom-right-radius: 20px;
 }
 button:hover{
     background-color: aqua;

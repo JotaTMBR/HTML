@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JotaCOM</title>
+    <title>JulianoCOM</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <main>
-    <form action="confirmar.html" method="post" id="frmcadastro" enctype="multipart/form-data">
+        <!-- O comando return false é utilizado no onSubmit para envitar que o formulario-->
+    <form onsubmit="return false" method="post" id="frmcadastro" enctype="multipart/form-data">
         <section id="opt">
-            <h1>JotaCOM.</h1>
+            <h1>JulianoCOM.</h1>
             <select id="idioma">
                 <option value="eng-us">US</option>
                 <option value="eng-uk">UK</option>
@@ -21,14 +22,14 @@
 
         <section id="texto">
             <h2>Hi there!</h2>
-            <h3>Welcome to JotaCOM. Community Dashboard</h3>
+            <h3>Welcome to JulianoCOM. Community Dashboard</h3>
         </section>
 
         <section id="login">
             <input type="button" id="btn" value="Log in with Google">
-            <h4>━━━━━━ or ━━━━━━</h4>
-            <label for="txtemail"></label>
-            <input type="email" name="txtemail" id="txtemail" placeholder="Your email" required>
+            <h4>━━━━━━━━ or ━━━━━━━━</h4>
+            <label for="txtuser"></label>
+            <input type="text" name="txtuser" id="txtuser" placeholder="Username" required>
 
             <label for="txtsenha"></label>
             <input type="password" name="txtsenha" id="txtsenha" placeholder="Password" maxlength="32">
@@ -39,13 +40,28 @@
             <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">Forgot password?</a>
         </div>
 
-        <input type="submit" value="Log In">
+        <input type="submit" value="Log In" id="btnLogin">
 
         <div id="signup">
             <br>
-            <p>Don't have an account? <a href="https://youtu.be/jeM9yRJwKl8" target="_blank">Sign up</a></p>
+            <p>Don't have an account? <a target="_blank"><span id="registro"> Sign up</span></a></p>
+        </div>
+
+        <div id="shadow">
+            <div>
+                <a href="#" id="fechar"> &times; </a>
+                <form onsubmit="return false">
+                    <input type="text" id="txtusuario" placeholder="Nome Usuário">
+                    <input type="password" id="txtpasswd" placeholder="Senha">
+                    <input type="email" id="txtemail" placeholder="E-Mail">
+                    <input type="file" id="txtfoto" placeholder="Foto do Usuário">
+                    <input type="submit" value="Cadastrar" id="btncadastrar">
+                </form>
+            </div>
         </div>
     </form>
     </main>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
